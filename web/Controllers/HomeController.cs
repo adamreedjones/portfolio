@@ -5,7 +5,6 @@ using web.Models;
 
 namespace web.Controllers
 {
-    [RequireHttps]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -15,8 +14,10 @@ namespace web.Controllers
             _logger = logger;
         }
 
-        [ResponseCache(NoStore = true, Duration = 0)]
-        public IActionResult Index() => View();
+        public IActionResult Index()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
