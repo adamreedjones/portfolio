@@ -1,0 +1,3 @@
+# Build generated min files
+/js/*.min.js
+/css/*.min.css
