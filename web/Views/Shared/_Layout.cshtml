@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Portfolio</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/site.min.css" />
+
+    @RenderSection("Style", false);
 </head>
 <body class="bg-light">
     <header>
@@ -22,19 +24,32 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">
-                                <!-- Default checked -->
-                                <div class="custom-control custom-switch">
-                                    <input type="checkbox" class="custom-control-input" id="theme" checked>
-                                    <label class="custom-control-label text-dark" for="theme">Theme</label>
-                                </div>
-                            </a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Resume" asp-action="Index">Resume</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
+    <!-- View Settings -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-dark section-header">
+                    <span>@ViewData["Title"]</span>
+                </h2>
+            </div>
+            <div class="col">
+                <!-- Default checked -->
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="theme" checked>
+                    <label class="custom-control-label text-dark" for="theme">Theme</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
