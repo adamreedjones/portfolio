@@ -4,8 +4,18 @@ var cookie = (function () {
         data = null,
         fn = {
             readRawCooke: function () {
+                if (navigator.cookieEnabled === false) {
+                    return null;
+                }
+
+                var rawCookie = document.cookie;
+
+                if (rawCookie === null || rawCookie === undefined || rawCookie === "") {
+                    return null;
+                }
+
                 var name = "data=";
-                var cookieArray = document.cookie.split(';');
+                var cookieArray = rawCookie.split(';');
                 for (var i = 0; i < cookieArray.length; i++) {
                     var cookieElement = cookieArray[i];
                     while (cookieElement.charAt(0) == ' ') {
@@ -15,12 +25,12 @@ var cookie = (function () {
                         return cookieElement.substring(name.length, cookieElement.length);
                     }
                 }
-                return "";
+                return null;
             },
             init: function () {
                 var rawCookie = fn.readRawCooke();
 
-                if (rawCookie === "") {
+                if (rawCookie === null) {
                     data = {};
                 } else {
                     data = JSON.parse(rawCookie);
