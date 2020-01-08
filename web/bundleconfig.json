@@ -14,6 +14,7 @@
     {
       "outputFileName": "wwwroot/js/site.min.js",
       "inputFiles": [
+        "wwwroot/js/cookie.js",
         "wwwroot/js/site.js",
         "wwwroot/js/theme.js"
       ],

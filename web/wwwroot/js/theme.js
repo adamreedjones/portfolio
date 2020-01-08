@@ -14,7 +14,8 @@ var toggleTheme = (function (element) {
                 },
                 opposite: function() {
                     return themes.dark;
-                }
+                },
+                name: "light"
             },
             dark: {
                 display: function() {
@@ -25,7 +26,8 @@ var toggleTheme = (function (element) {
                 },
                 opposite: function() {
                     return themes.light;
-                }
+                },
+                name: "dark"
             }
         },
         globals = {
@@ -33,12 +35,23 @@ var toggleTheme = (function (element) {
         },
         fn = {
             init: function () {
+                var savedTheme = cookie.get("theme");
+
+                if (savedTheme === undefined) {
+                    cookie.set("theme", "light") // default
+                } else if(savedTheme === "dark") {
+                    globals.currentTheme = themes["dark"];
+                    globals.currentTheme.display();
+                }
+
                 element.click(fn.handleThemToggleEvent);
             },
-            toggle: function() {
+            toggle: function () {
                 var nextTheme = globals.currentTheme.opposite();
                 nextTheme.display();
                 globals.currentTheme = nextTheme;
+
+                cookie.set("theme", nextTheme.name);
             },
             handleThemToggleEvent: function () {
                 fn.toggle();
