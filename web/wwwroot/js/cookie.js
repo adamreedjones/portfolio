@@ -42,9 +42,13 @@ var cookie = (function () {
             set: function (key, value) {
                 data[key] = value;
 
+                var date = new Date();
+                var days = 365;
+                date.setTime(+ date + (days * 86400000)); //24 * 60 * 60 * 1000
+
                 var rawCookie = JSON.stringify(data);
 
-                document.cookie = "data=" + rawCookie;
+                document.cookie = "data=" + rawCookie + "; expires=" + date.toGMTString() + "; path =/";;
 
                 return undefined;
             }
