@@ -3,7 +3,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster AS build
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS build
 WORKDIR /src
 COPY ["web/web.csproj", "web/"]
 RUN dotnet restore "web/web.csproj"
