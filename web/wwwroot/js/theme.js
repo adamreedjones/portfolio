@@ -11,6 +11,8 @@ var toggleTheme = (function (element) {
                     $(".bg-dark").removeClass("bg-dark").addClass("bg-light");
                     $(".navbar-dark").removeClass("navbar-dark").addClass("navbar-light");
                     $(".box-shadow-light").removeClass("box-shadow-light").addClass("box-shadow-dark");
+
+                    $(".dropdown-menu").addClass("dropdown-menu-light").removeClass("dropdown-menu-dark");
                 },
                 opposite: function() {
                     return themes.dark;
@@ -23,6 +25,7 @@ var toggleTheme = (function (element) {
                     $(".bg-light").removeClass("bg-light").addClass("bg-dark");
                     $(".navbar-light").removeClass("navbar-light").addClass("navbar-dark");
                     $(".box-shadow-dark").removeClass("box-shadow-dark").addClass("box-shadow-light");
+                    $(".dropdown-menu").removeClass("dropdown-menu-light").addClass("dropdown-menu-dark");
                 },
                 opposite: function() {
                     return themes.light;
