@@ -77,3 +77,21 @@ body {
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
 }
+
+
+/* Menu */
+div.dropdown-menu.dropdown-menu-light {
+    background-color: white;
+}
+div.dropdown-menu.dropdown-menu-dark {
+    background-color: #343a40;
+    border-color: #f8f9fa;
+}
+
+    div.dropdown-menu.dropdown-menu-dark div.dropdown-item {
+        color: #f8f9fa; /*white*/
+    }
+
+        div.dropdown-menu.dropdown-menu-dark div.dropdown-item:hover {
+            color: #343a40;/*dark*/
+        }
