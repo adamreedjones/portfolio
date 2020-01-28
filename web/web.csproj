@@ -19,4 +19,7 @@
     <NonMinifiedFiles Include="wwwroot\js\**\*.js;wwwroot\css\**\*.css" Exclude="wwwroot\js\**\*.min.js;wwwroot\css\**\*.min.css" />
     <Content Update="@(NonMinifiedFiles)" CopyToPublishDirectory="Never" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\pdf\" />
+  </ItemGroup>
 </Project>
