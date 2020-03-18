@@ -12,14 +12,13 @@
   
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.435" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
   </ItemGroup>
   <ItemGroup>
     <NonMinifiedFiles Include="wwwroot\js\**\*.js;wwwroot\css\**\*.css" Exclude="wwwroot\js\**\*.min.js;wwwroot\css\**\*.min.css" />
     <Content Update="@(NonMinifiedFiles)" CopyToPublishDirectory="Never" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="wwwroot\pdf\" />
   </ItemGroup>
 </Project>
